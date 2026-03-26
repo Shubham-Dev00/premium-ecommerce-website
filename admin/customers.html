@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AUREN Admin — Customers</title>
+  <meta name="description" content="AUREN admin control center demo.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body class="admin-body">
+  <div class="admin-layout">
+    <aside class="admin-sidebar" id="adminSidebar">
+      <div class="stack">
+        <a href="dashboard.html" class="brand">
+          <span class="brand-mark">A</span>
+          <span class="brand-copy"><strong>AUREN</strong><span>Control Center</span></span>
+        </a>
+      </div>
+      <nav class="admin-nav">
+        <a href="dashboard.html" class="">◫ Dashboard</a>
+        <a href="products.html" class="">◧ Products</a>
+        <a href="orders.html" class="">◎ Orders</a>
+        <a href="customers.html" class="active">◉ Customers</a>
+        <a href="coupons.html" class="">⌁ Coupons</a>
+        <a href="analytics.html" class="">◌ Analytics</a>
+        <a href="settings.html" class="">⚙ Settings</a>
+      </nav>
+      <div class="stack">
+        <a href="../index.html" class="btn-soft">Open storefront</a>
+      </div>
+    </aside>
+    <main class="admin-main">
+      <div class="admin-topbar">
+        <div class="row">
+          <button class="icon-btn mobile-admin-toggle" id="adminMenuToggle">☰</button>
+          <div>
+            <strong id="adminGreeting">AUREN Control Center</strong>
+            <div class="muted">Operational snapshot for the demo store</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="notification-dot"></div>
+          <div>
+            <strong>Admin</strong>
+            <div class="muted" id="adminProfileMail">admin@auren.com</div>
+          </div>
+          <button class="btn-secondary" id="adminLogoutBtn">Logout</button>
+        </div>
+      </div>
+
+<section id="adminCustomersApp" class="stack-lg">
+  <div class="admin-panel" data-reveal>
+    <div class="row-between"><h2>Customer directory</h2><input id="customerSearchInput" placeholder="Search customers"></div>
+  </div>
+  <div class="table-panel" data-reveal>
+    <table class="admin-table" id="adminCustomersTable">
+      <thead><tr><th>Customer</th><th>Email</th><th>Orders</th><th>Spent</th><th>Status</th><th>Actions</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</section>
+
+    </main>
+  </div>
+  <script defer src="../js/auth.js"></script>
+  <script defer src="../js/main.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script defer src="../js/admin.js"></script>
+  <script defer src="../js/animations.js"></script>
+</body>
+</html>

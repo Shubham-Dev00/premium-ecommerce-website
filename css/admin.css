@@ -1,0 +1,246 @@
+
+.admin-body {
+  background:
+    radial-gradient(circle at top left, rgba(77,124,255,0.08), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(15,169,104,0.08), transparent 22%),
+    #f4f6fb;
+}
+
+.admin-layout {
+  display: grid;
+  grid-template-columns: 290px minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+.admin-sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  padding: 1rem;
+  background: rgba(18,20,26,0.95);
+  color: #f9fbff;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 1.2rem;
+}
+
+.admin-sidebar .brand-copy span,
+.admin-sidebar a {
+  color: rgba(255,255,255,0.72);
+}
+
+.admin-nav {
+  display: grid;
+  gap: .45rem;
+}
+
+.admin-nav a {
+  display: flex;
+  align-items: center;
+  gap: .9rem;
+  padding: .95rem 1rem;
+  border-radius: 18px;
+  transition: background .25s ease, color .25s ease, transform .25s ease;
+}
+
+.admin-nav a:hover,
+.admin-nav a.active {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  transform: translateX(4px);
+}
+
+.admin-main {
+  padding: 1.2rem;
+}
+
+.admin-topbar {
+  padding: 1rem 1.2rem;
+  border-radius: 28px;
+  background: rgba(255,255,255,0.78);
+  border: 1px solid rgba(255,255,255,0.88);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.admin-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.admin-grid.stats {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.admin-grid.chart-2 {
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr);
+}
+
+.admin-grid.cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.admin-panel,
+.admin-card,
+.chart-panel,
+.table-panel {
+  padding: 1.2rem;
+  border-radius: 28px;
+  background: rgba(255,255,255,0.78);
+  border: 1px solid rgba(255,255,255,0.9);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(18px);
+}
+
+.metric {
+  display: grid;
+  gap: .55rem;
+}
+
+.metric strong {
+  font-size: 2rem;
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+
+.metric small {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.progress-list {
+  display: grid;
+  gap: .95rem;
+}
+
+.progress-bar {
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(18,20,26,0.08);
+  overflow: hidden;
+  margin-top: .45rem;
+}
+
+.low-stock-list,
+.quick-actions {
+  display: grid;
+  gap: .8rem;
+}
+
+.low-stock-item,
+.quick-action {
+  display: flex;
+  gap: .8rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: .95rem 1rem;
+  border-radius: 18px;
+  background: rgba(18,20,26,0.04);
+}
+
+.quick-action {
+  text-align: left;
+}
+
+.admin-table img {
+  width: 56px;
+  height: 56px;
+  border-radius: 18px;
+  object-fit: cover;
+}
+
+.bulk-bar {
+  display: flex;
+  gap: .8rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: .8rem;
+  flex-wrap: wrap;
+}
+
+.admin-modal-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.admin-modal-form .form-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.pie-grid,
+.funnel-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.funnel-step {
+  padding: 1rem;
+  border-radius: 22px;
+  background: rgba(18,20,26,0.05);
+}
+
+.customer-summary {
+  display: grid;
+  gap: .7rem;
+}
+
+.notification-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--danger);
+  box-shadow: 0 0 0 6px rgba(240,70,91,0.14);
+}
+
+.mobile-admin-toggle {
+  display: none;
+}
+
+@media (max-width: 1120px) {
+  .admin-grid.stats,
+  .admin-grid.chart-2,
+  .admin-grid.cols-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 860px) {
+  .admin-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-sidebar {
+    position: fixed;
+    inset: 1rem auto 1rem 1rem;
+    width: min(320px, calc(100% - 2rem));
+    z-index: 160;
+    transform: translateX(-110%);
+    transition: transform .25s ease;
+    box-shadow: var(--shadow-lg);
+    border-radius: 32px;
+  }
+
+  .admin-sidebar.active {
+    transform: translateX(0);
+  }
+
+  .admin-main {
+    padding-top: 5rem;
+  }
+
+  .mobile-admin-toggle {
+    display: inline-flex;
+  }
+
+  .admin-grid.stats,
+  .admin-grid.chart-2,
+  .admin-grid.cols-3,
+  .admin-modal-form .form-grid {
+    grid-template-columns: 1fr;
+  }
+}

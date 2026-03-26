@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AUREN — Search Results</title>
+  <meta name="description" content="AUREN — premium minimalist e-commerce demo built with plain HTML, CSS, and JavaScript.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body data-page="search">
+  <header class="site-header"></header>
+  <main>
+
+    <section class="section page-hero compact-hero">
+      <div class="container" data-reveal>
+        <span class="eyebrow">Shop</span>
+        <h1 id="resultsHeading">Explore the collection</h1>
+        <p class="muted">Filter by category, price, brand, rating, color, and size to find the right fit fast.</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container" id="productsApp">
+        <div class="catalog-shell">
+          <aside id="filterSidebar" class="catalog-sidebar"></aside>
+          <div class="catalog-main">
+            <div class="catalog-toolbar panel" data-reveal>
+              <div class="row wrap">
+                <strong id="resultsCount">0 results</strong>
+                <div id="activeFilterTags" class="row wrap"></div>
+              </div>
+              <div class="row wrap">
+                <label class="sort-wrap">Sort by
+                  <select id="sortSelect">
+                    <option value="popular">Popularity</option>
+                    <option value="newest">Newest</option>
+                    <option value="low">Price: Low to High</option>
+                    <option value="high">Price: High to Low</option>
+                    <option value="rating">Rating</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+            <div id="productsEmpty" class="empty-state hide">
+              <h3>No matching products</h3>
+              <p class="muted">Try clearing a few filters or searching for sneakers, bags, or apparel.</p>
+              <a href="products.html" class="btn">Reset filters</a>
+            </div>
+            <div id="productsGrid" class="product-grid"></div>
+            <div id="pagination" class="pagination"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <footer class="site-footer"></footer>
+  <script defer src="js/cart.js"></script>
+  <script defer src="js/auth.js"></script>
+  <script defer src="js/main.js"></script>
+  <script defer src="js/animations.js"></script>
+</body>
+</html>

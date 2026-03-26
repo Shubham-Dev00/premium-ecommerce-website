@@ -1,0 +1,179 @@
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(28px) scale(.98);
+  transition: opacity .7s cubic-bezier(.2,.8,.2,1), transform .7s cubic-bezier(.2,.8,.2,1);
+}
+
+[data-reveal].revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+[data-stagger] > * {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+[data-stagger].revealed > * {
+  animation: staggerIn .7s cubic-bezier(.2,.8,.2,1) forwards;
+}
+
+[data-stagger].revealed > *:nth-child(1) { animation-delay: .06s; }
+[data-stagger].revealed > *:nth-child(2) { animation-delay: .12s; }
+[data-stagger].revealed > *:nth-child(3) { animation-delay: .18s; }
+[data-stagger].revealed > *:nth-child(4) { animation-delay: .24s; }
+[data-stagger].revealed > *:nth-child(5) { animation-delay: .30s; }
+[data-stagger].revealed > *:nth-child(6) { animation-delay: .36s; }
+[data-stagger].revealed > *:nth-child(7) { animation-delay: .42s; }
+[data-stagger].revealed > *:nth-child(8) { animation-delay: .48s; }
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  background: rgba(255,255,255,0.35);
+  animation: ripple .6s linear;
+  pointer-events: none;
+}
+
+.hero-kenburns img {
+  animation: kenBurns 14s ease-in-out infinite alternate;
+}
+
+.flash-digit {
+  display: inline-grid;
+  place-items: center;
+  min-width: 42px;
+  height: 52px;
+  border-radius: 16px;
+  background: rgba(18,20,26,0.95);
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 800;
+  box-shadow: 0 18px 28px rgba(18,20,26,0.2);
+  transform-style: preserve-3d;
+  animation: flipIn .5s cubic-bezier(.25,.9,.4,1) both;
+}
+
+.timeline-item.active {
+  animation: timelinePulse 1.3s ease-in-out infinite alternate;
+}
+
+.checkmark-circle {
+  fill: none;
+  stroke: rgba(77,124,255,0.15);
+  stroke-width: 5;
+}
+
+.checkmark-path {
+  fill: none;
+  stroke: #10b26e;
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 160;
+  stroke-dashoffset: 160;
+  animation: checkmark .9s ease forwards .3s;
+}
+
+.checkmark-ring {
+  fill: none;
+  stroke: #10b26e;
+  stroke-width: 5;
+  stroke-dasharray: 252;
+  stroke-dashoffset: 252;
+  animation: checkmark .8s ease forwards;
+}
+
+.counter-value {
+  display: inline-block;
+}
+
+@keyframes staggerIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotateX(6deg) rotateY(-7deg);
+  }
+  50% {
+    transform: translateY(-12px) rotateX(-3deg) rotateY(6deg);
+  }
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(3.6);
+    opacity: 0;
+  }
+}
+
+@keyframes skeleton {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes toastProgress {
+  to {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+}
+
+@keyframes cartBounce {
+  0%, 100% { transform: scale(1); }
+  35% { transform: scale(1.25); }
+  60% { transform: scale(.92); }
+}
+
+@keyframes timelinePulse {
+  from { transform: translateY(0); }
+  to { transform: translateY(-2px); }
+}
+
+@keyframes checkmark {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes kenBurns {
+  from {
+    transform: scale(1) translateX(0);
+  }
+  to {
+    transform: scale(1.08) translateX(-12px);
+  }
+}
+
+@keyframes flipIn {
+  from {
+    transform: rotateX(-90deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}

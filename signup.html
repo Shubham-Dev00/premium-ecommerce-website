@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AUREN — Sign Up</title>
+  <meta name="description" content="AUREN — premium minimalist e-commerce demo built with plain HTML, CSS, and JavaScript.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body data-page="signup">
+  <header class="site-header"></header>
+  <main>
+
+    <section class="section auth-section">
+      <div class="container small-container">
+        <div class="auth-card panel" data-reveal>
+          <span class="eyebrow">Join AUREN</span>
+          <h1>Create your account</h1>
+          <p class="muted">Save addresses, manage orders, build your wishlist, and check out faster.</p>
+          <form id="signupForm" class="stack-lg">
+            <div><label>Full name</label><input name="fullName"><small class="error-text" data-error="fullName"></small></div>
+            <div><label>Email</label><input name="email" type="email"><small class="error-text" data-error="email"></small></div>
+            <div><label>Phone (optional)</label><input name="phone"></div>
+            <div>
+              <div class="row-between"><label>Password</label><button class="btn-ghost text-btn" type="button" id="toggleSignupPassword">Show</button></div>
+              <input id="signupPassword" name="password" type="password">
+              <div class="strength-bar"><span id="passwordStrengthFill"></span></div>
+              <small class="error-text" data-error="password"></small>
+            </div>
+            <div><label>Confirm password</label><input name="confirmPassword" type="password"><small class="error-text" data-error="confirmPassword"></small></div>
+            <label class="checkbox-wrap"><input type="checkbox" name="terms"> I agree to the terms and privacy policy</label>
+            <small class="error-text" data-error="terms"></small>
+            <button class="btn full" type="submit">Create account</button>
+          </form>
+          <p class="muted center">Already have an account? <a href="login.html">Sign in</a></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <footer class="site-footer"></footer>
+  <script defer src="js/cart.js"></script>
+  <script defer src="js/auth.js"></script>
+  <script defer src="js/main.js"></script>
+  <script defer src="js/animations.js"></script>
+</body>
+</html>

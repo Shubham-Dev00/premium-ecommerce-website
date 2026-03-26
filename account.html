@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AUREN — Account</title>
+  <meta name="description" content="AUREN — premium minimalist e-commerce demo built with plain HTML, CSS, and JavaScript.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body data-page="account">
+  <header class="site-header"></header>
+  <main>
+
+    <section class="section page-hero compact-hero">
+      <div class="container" data-reveal>
+        <span class="eyebrow">Account</span>
+        <h1>Your profile</h1>
+        <p class="muted">Manage personal details, saved addresses, security, and notification preferences.</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container stack-lg" id="accountApp">
+        <div class="account-grid">
+          <div class="panel stack-lg" data-reveal>
+            <div class="row wrap align-center">
+              <img src="https://picsum.photos/seed/auren-profile-demo/160/160" alt="Profile" class="account-avatar">
+              <div>
+                <h2>Profile details</h2>
+                <button class="btn-soft" type="button">Upload photo</button>
+              </div>
+            </div>
+            <div class="form-grid two-col">
+              <div><label>Full name</label><input id="profileName"></div>
+              <div><label>Email</label><input id="profileEmail"></div>
+              <div><label>Phone</label><input id="profilePhone"></div>
+              <div><label>New password</label><input type="password" placeholder="••••••••"></div>
+            </div>
+            <div class="row wrap"><button class="btn" id="saveProfileBtn">Save Profile</button><a class="btn-secondary" href="order-history.html">View Orders</a></div>
+          </div>
+          <div class="panel stack-lg" data-reveal>
+            <h2>Notification preferences</h2>
+            <label class="filter-option"><span>Order updates</span><input type="checkbox" checked></label>
+            <label class="filter-option"><span>Launch announcements</span><input type="checkbox" checked></label>
+            <label class="filter-option"><span>Promotional emailers</span><input type="checkbox"></label>
+          </div>
+        </div>
+        <div class="panel stack-lg" data-reveal>
+          <div class="row-between"><h2>Saved addresses</h2><button class="btn-secondary" id="addAddressBtn">Add address</button></div>
+          <div id="addressManager" class="stack"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <footer class="site-footer"></footer>
+  <script defer src="js/cart.js"></script>
+  <script defer src="js/auth.js"></script>
+  <script defer src="js/main.js"></script>
+  <script defer src="js/animations.js"></script>
+</body>
+</html>

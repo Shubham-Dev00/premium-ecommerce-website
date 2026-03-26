@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AUREN Admin — Analytics</title>
+  <meta name="description" content="AUREN admin control center demo.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body class="admin-body">
+  <div class="admin-layout">
+    <aside class="admin-sidebar" id="adminSidebar">
+      <div class="stack">
+        <a href="dashboard.html" class="brand">
+          <span class="brand-mark">A</span>
+          <span class="brand-copy"><strong>AUREN</strong><span>Control Center</span></span>
+        </a>
+      </div>
+      <nav class="admin-nav">
+        <a href="dashboard.html" class="">◫ Dashboard</a>
+        <a href="products.html" class="">◧ Products</a>
+        <a href="orders.html" class="">◎ Orders</a>
+        <a href="customers.html" class="">◉ Customers</a>
+        <a href="coupons.html" class="">⌁ Coupons</a>
+        <a href="analytics.html" class="active">◌ Analytics</a>
+        <a href="settings.html" class="">⚙ Settings</a>
+      </nav>
+      <div class="stack">
+        <a href="../index.html" class="btn-soft">Open storefront</a>
+      </div>
+    </aside>
+    <main class="admin-main">
+      <div class="admin-topbar">
+        <div class="row">
+          <button class="icon-btn mobile-admin-toggle" id="adminMenuToggle">☰</button>
+          <div>
+            <strong id="adminGreeting">AUREN Control Center</strong>
+            <div class="muted">Operational snapshot for the demo store</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="notification-dot"></div>
+          <div>
+            <strong>Admin</strong>
+            <div class="muted" id="adminProfileMail">admin@auren.com</div>
+          </div>
+          <button class="btn-secondary" id="adminLogoutBtn">Logout</button>
+        </div>
+      </div>
+
+<section id="adminAnalyticsApp" class="stack-lg">
+  <div class="admin-panel" data-reveal>
+    <div class="row-between wrap">
+      <div><h2>Reports & analytics</h2><div class="muted">Range selector is demo-only UI</div></div>
+      <div class="row wrap"><input type="date"><input type="date"></div>
+    </div>
+  </div>
+  <div class="admin-grid chart-2">
+    <div class="chart-panel" data-reveal>
+      <h2>Revenue over time</h2>
+      <canvas id="analyticsRevenueChart" height="120"></canvas>
+    </div>
+    <div class="chart-panel" data-reveal>
+      <h2>Orders by category</h2>
+      <canvas id="analyticsCategoryChart" height="120"></canvas>
+    </div>
+  </div>
+  <div class="admin-grid chart-2">
+    <div class="table-panel" data-reveal>
+      <h2>Top products</h2>
+      <table class="admin-table" id="topProductsAnalytics">
+        <thead><tr><th>#</th><th>Product</th><th>Category</th><th>Price</th><th>Reviews</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="stack-lg">
+      <div class="admin-panel" data-reveal><h2>Traffic sources</h2><div id="trafficSources" class="pie-grid"></div></div>
+      <div class="admin-panel" data-reveal><h2>Conversion funnel</h2><div id="conversionFunnel" class="funnel-grid"></div></div>
+    </div>
+  </div>
+</section>
+
+    </main>
+  </div>
+  <script defer src="../js/auth.js"></script>
+  <script defer src="../js/main.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script defer src="../js/admin.js"></script>
+  <script defer src="../js/animations.js"></script>
+</body>
+</html>
