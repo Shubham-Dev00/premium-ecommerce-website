@@ -80,14 +80,15 @@ This is a static demo project. To preview locally, just open `index.html` in you
 - Picsum Photos for placeholder product and content imagery
 
 ## Dummy Credentials
+- These are fake demo-only credentials used for UI preview/testing.
 
 ### User Login
-- Email: `demo@auren.com`
-- Password: `Demo@123`
+- Email: `user@example.com`
+- Password: `example-password`
 
 ### Admin Login
-- Email: `admin@auren.com`
-- Password: `Admin@123`
+- Email: `admin@example.com`
+- Password: `example-password`
 
 ## Dummy Promo Codes
 
